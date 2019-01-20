@@ -5,8 +5,8 @@ Requires=messager.socket
 
 [Service]
 Type=simple
-WorkingDirectory=/home/vladius/
-ExecStart=/home/vladius/messager.py
+WorkingDirectory=/home/hackathon/
+ExecStart=/home/hackathon/messager.py
 TimeoutStopSec=5
 
 [Install]

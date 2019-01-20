@@ -5,8 +5,8 @@ Requires=keysender.socket
 
 [Service]
 Type=simple
-WorkingDirectory=/home/vladius/
-ExecStart=/home/vladius/keysender.py
+WorkingDirectory=/home/hackathon/
+ExecStart=/home/hackathon/keysender.py
 TimeoutStopSec=5
 
 [Install]
