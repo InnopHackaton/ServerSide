@@ -10,7 +10,7 @@ class Handler(StreamRequestHandler):
         logging.info("From <%s>: %s" % (self.client_address, self.data))
 
         if self.data == b"Hackathon":
-            self.wfile.write(self.data.upper() + "\r\n".encode("utf-8"))
+            self.wfile.write(key)
 
 
 class Server(TCPServer):
@@ -25,6 +25,8 @@ class Server(TCPServer):
 
 
 if __name__ == "__main__":
+    with open("pubkey.asc", "rb") as keyfile:
+        key = keyfile.read()
     logging.basicConfig(level=logging.INFO)
     HOST, PORT = "localhost", 1338
     server = Server((HOST, PORT), Handler)
