@@ -1,0 +1,13 @@
+[Unit]
+Description=Service for send pub key
+After=network.target keysender.socket
+Requires=keysender.socket
+
+[Service]
+Type=simple
+WorkingDirectory=/home/vladius/
+ExecStart=/home/vladius/keysender.py
+TimeoutStopSec=5
+
+[Install]
+WantedBy=multi-default.target     
