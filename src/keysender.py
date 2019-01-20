@@ -7,9 +7,9 @@ import logging
 class Handler(StreamRequestHandler):
     def handle(self):
         self.data = self.rfile.readline().strip()
-        logging.info("From <%s>: %s" % (self.client_address, self.data))
 
         if self.data == b"Hackathon":
+            logging.info("From <%s>: %s" % (self.client_address, self.data))
             self.wfile.write(key)
 
 
