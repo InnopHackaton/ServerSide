@@ -1,0 +1,13 @@
+[Unit]
+Description=Service for send pub key
+After=network.target messager.socket
+Requires=messager.socket
+
+[Service]
+Type=simple
+WorkingDirectory=/home/vladius/
+ExecStart=/home/vladius/messager.py
+TimeoutStopSec=5
+
+[Install]
+WantedBy=multi-default.target   
