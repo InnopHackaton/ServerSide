@@ -1,7 +1,6 @@
 [Unit]
 Description=Service for send pub key
-After=network.target keysender.socket
-Requires=keysender.socket
+After=network.target
 
 [Service]
 Type=simple
