@@ -8,7 +8,7 @@ cat >foo <<EOF
      Name-Comment: SERVER
      Name-Email: hack@hack.ru
      Expire-Date: 0
-     Passphrase: abc
+     Passphrase: noperm
      # Do a commit here, so that we can later print "done" :-)
      %commit
      %echo done
