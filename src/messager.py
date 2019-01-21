@@ -4,7 +4,7 @@ from socket import AF_INET, socket, SOCK_STREAM
 from threading import Thread
 from coder import Encoder, Decoder
 import logging
-
+import configparser
 
 def accept_incoming_connections():
     """Sets up handling for incoming clients."""
@@ -50,11 +50,14 @@ def recv(client):
     return decoder.decode(client.recv(BUFSIZ))
 
 
+config = configparser.ConfigParser()
+config.read('configs/config.ini')
+
 clients = {}
 addresses = {}
 
 HOST = ''
-PORT = 33001
+PORT = int(config['DEFAULT']['MES_PORT'])
 BUFSIZ = 6144
 ADDR = (HOST, PORT)
 

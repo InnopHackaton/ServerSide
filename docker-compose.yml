@@ -1,0 +1,22 @@
+# docker-compose.yml
+version: '2'
+services:
+ hackaserver:
+   build: .
+   ports:
+       - "1337:1337"
+       - "1338:1338"
+   volumes:
+      - .:/code
+   command: bash /home/hackathon/run.sh
+   networks:
+     vpcbr:
+        ipv4_address: 10.0.5.6
+networks:
+  vpcbr:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 10.0.5.0/16
+         gateway: 10.0.5.1
+   
